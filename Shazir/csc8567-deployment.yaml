@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: csc8567
+      app: web
   template:
     metadata:
       labels:
-        app: csc8567
+        app: web
     spec:
       containers:
       - name: csc8567
