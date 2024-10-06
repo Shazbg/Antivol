@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-vroumvroum-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-vroumvroum
+  template:
+    metadata:
+      labels:
+        app: web-vroumvroum
+    spec:
+      containers:
+      - name: web-vroumvroum-container
+        image: shazbg/vroumvroum:v2
+        ports:
+        - containerPort: 8000
