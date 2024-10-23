@@ -1,11 +1,12 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-service
-spec:
-  selector:
-    app: nginx
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
+apiVersion: v1                # Version de l'API Kubernetes (v1 pour les Services)
+kind: Service                 # Type de ressource, ici un Service
+metadata:                     # Métadonnées du Service
+  name: csc8567-service       # Nom donné au Service
+spec:                         # Spécifications pour le Service
+  selector:                   # Sélecteur qui correspond aux labels des Pods ciblés
+    app: csc8567-app          # Les Pods avec ce label seront exposés via ce Service
+  ports:                      # Liste des ports que ce Service expose
+    - protocol: TCP           # Protocole (TCP ici)
+      port: 80                # Port sur lequel le Service est exposé
+      targetPort: 80          # Port sur lequel les Pods écoutent (port du conteneur)
+  type: ClusterIP             # Type de Service (ClusterIP, NodePort, LoadBalancer, etc.)
