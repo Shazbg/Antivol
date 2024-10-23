@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: web-vroumvroum-container
-        image: shazbg/vroumvroum:v2
+        image: shazbg/vroumvroum:v3
         ports:
         - containerPort: 8000
