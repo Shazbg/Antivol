@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-vroumvroum-svc
+spec:
+  type: NodePort
+  selector:
+    app: web-vroumvroum
+  ports:
+    - port: 80
+      targetPort: 8000
+      nodePort: 30007

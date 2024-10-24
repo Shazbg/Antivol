@@ -1,0 +1,42 @@
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db-vroumvroum-statefulset
+spec:
+  replicas: 1  # 3 répliques
+  selector:
+    matchLabels:
+      app: db-vroumvroum
+  template:
+    metadata:
+      labels:
+        app: db-vroumvroum
+    spec:
+      containers:
+      - name: db-vroumvroum-container
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_DB
+          value: django6
+        - name: POSTGRES_USER
+          value: myuser
+        - name: POSTGRES_PASSWORD
+          value: mypassword
+        # - name: PGDATA
+        #   value: /var/lib/postgresql/data/p
+
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data/
+          subPath: postgres
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres-storage
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 1Gi
