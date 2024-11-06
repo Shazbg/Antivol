@@ -23,10 +23,13 @@ Un ClusterIP expose le service de manière interne au cluster avec des adresses 
 # Défi 3
 
 ./kubefdp.sh pour lancer un script qui supprime tous les deployments/statefulset, services et pvc. il les réapply ensuite pour partir sur une base clean  
+
+
 Quelle critique pouvez-vous donner vis-à-vis de l'utilisation d'un Pod pour la base de données ?  
 
 L'utilisation d'un seul pod est dangereux pour une base de données, dans le cas où celui-ci crash, le site web serait alors accessible et on ne profite en aucun cas de toute la résilience que peut apporter Kube.
 
 Sur quel type de ressource KubeDNS crée des entrées ? Quelle information propre a la ressource est utilisée ?
+
 KubeDNS se base sur le nom et namespaces des services et pods pour créer des entrées DNS 
 
