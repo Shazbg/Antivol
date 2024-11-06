@@ -1,7 +1,7 @@
 apiVersion: apps/v1        # Version de l'API Kubernetes utilisée pour la ressource
 kind: Deployment           # Type de ressource à créer (ici, un Deployment)
 metadata:                  # Informations sur l'objet (nom, labels, annotations, etc.)
-  name: csc8567-deployment # Nom donné au Deployment
+  name: csc8567-deploymentwhip # Nom donné au Deployment
   labels:                  # Étiquettes associées pour identifier cet objet
     app: csc8567-app       # Label personnalisé
 spec:                      # Spécifications pour ce Deployment
@@ -16,7 +16,7 @@ spec:                      # Spécifications pour ce Deployment
     spec:                  # Spécifications pour les Pods (conteneurs, volumes, etc.)
       containers:          # Liste des conteneurs à exécuter dans chaque Pod
       - name: csc8567-container  # Nom donné au conteneur
-        image: csc8567:latest   # Image Docker à utiliser pour ce conteneur
+        image: xhelozs/csc8567:v1  # Image Docker à utiliser pour ce conteneur
         ports:                 # Ports que le conteneur expose
         - containerPort: 80     # Port exposé à l'intérieur du conteneur
         resources:             # Gestion des ressources CPU et mémoire pour le conteneur
