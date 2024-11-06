@@ -37,3 +37,5 @@ Différence avec un Deployment :
 Deployment : Utilisé pour des applications stateless où l'identité des pods et la persistance des données ne sont pas importantes. Les pods sont répliqués de manière interchangeable.
 StatefulSet : Conçu pour des applications stateful où l'identité et l'état des pods sont essentiels. Les pods sont créés dans un ordre spécifique, avec des volumes persistants individuels, et leur identité est conservée à travers les redémarrages.
 
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi3.png?raw=true">
+
