@@ -10,3 +10,4 @@ kubectl apply -f db-vroumvroum-deployment.yaml
 sleep 5 # wait for db svc to be ready
 kubectl apply -f web-vroumvroum-svc.yaml      
 kubectl apply -f web-vroumvroum-deployment.yaml
+kubectl apply -f web-vroumvroum-ingress.yaml

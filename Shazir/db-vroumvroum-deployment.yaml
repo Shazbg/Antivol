@@ -25,7 +25,6 @@ spec:
           value: myuser
         - name: POSTGRES_PASSWORD
           value: mypassword
-        # - name: PGDATA
-        #   value: /var/lib/postgresql/data/p
+
 
 
