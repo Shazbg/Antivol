@@ -24,3 +24,9 @@ spec:
           value: myuser
         - name: POSTGRES_PASSWORD
           value: mypassword
+        - name: DJANGO_SUPERUSER_PASSWORD
+          value: adminadmin
+        - name: DJANGO_SUPERUSER_EMAIL
+          value: nomail@caca.net
+        - name: DJANGO_SUPERUSER_USERNAME
+          value: admin

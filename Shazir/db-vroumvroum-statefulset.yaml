@@ -4,7 +4,7 @@ kind: StatefulSet
 metadata:
   name: db-vroumvroum-statefulset
 spec:
-  replicas: 1  # 3 répliques
+  replicas: 1 
   selector:
     matchLabels:
       app: db-vroumvroum
