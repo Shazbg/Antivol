@@ -39,3 +39,9 @@ StatefulSet : Conçu pour des applications stateful où l'identité et l'état d
 
 <img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi3.png?raw=true">
 
+# Défi 4 
+
+On rajoute un ingress pour pointer vers le service web directement depuis internet sans kubectl proxy. Il y a aussi un ingress controller au milieu 
+
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi4.png?raw=true">
+
