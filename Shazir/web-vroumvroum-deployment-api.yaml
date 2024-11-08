@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: web-vroumvroum-container-api
-        image: shazbg/vroumvroum:api
+        image: shazbg/vroumvroum:api_v1
         ports:
         - containerPort: 8001
         resources:

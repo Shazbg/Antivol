@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: web-vroumvroum-container-front
-        image: shazbg/vroumvroum:front
+        image: shazbg/vroumvroum:front_v1
         ports:
         - containerPort: 8000
         resources:
