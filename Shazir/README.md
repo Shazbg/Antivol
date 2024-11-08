@@ -45,3 +45,8 @@ On rajoute un ingress pour pointer vers le service web directement depuis intern
 
 <img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi4.png?raw=true">
 
+# Défi 5
+
+Séparation des images Docker (public, api), création de nouveaux déploiements avec leur service + modification de l'ingress pour taper les différents services
+
+ajouter schéma
