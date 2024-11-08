@@ -1,0 +1,3 @@
+kubectl create deployment defi1 --image=xhelozs/csc8567:v1
+kubectl get pods
+kubectl port-forward pods/defi1-bc65795db-sb9qk 8002:5000
