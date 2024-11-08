@@ -50,3 +50,4 @@ On rajoute un ingress pour pointer vers le service web directement depuis intern
 Séparation des images Docker (public, api), création de nouveaux déploiements avec leur service + modification de l'ingress pour taper les différents services
 
 ajouter schéma
+
