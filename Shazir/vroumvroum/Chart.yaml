@@ -1,6 +1,6 @@
 apiVersion: v2
-name: web-vroumvroum
-description: A Helm chart for Kubernetes
+name: vroumvroum
+description: Charte Helm déployant l'application web de VroumVroum
 
 # A chart can be either an 'application' or a 'library' chart.
 #

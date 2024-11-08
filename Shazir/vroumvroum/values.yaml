@@ -1,0 +1,55 @@
+api:
+  image:
+    repository: shazbg/vroumvroum
+    tag: api_v1
+  containerPort: 8001
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 8001
+    nodePort: 30009
+
+front:
+  image:
+    repository: shazbg/vroumvroum
+    tag: front_v1
+  containerPort: 8000
+front:
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 8000
+    nodePort: 30007
+
+
+web:
+  replicaCount: 3
+  resources:
+    requests:
+      memory: "100M"
+      cpu: "0.1"
+    limits:
+      memory: "200M"
+      cpu: "0.2"
+  env:
+    POSTGRES_DB: django6
+    POSTGRES_USER: myuser
+    POSTGRES_PASSWORD: mypassword
+    DJANGO_SUPERUSER_PASSWORD: adminadmin
+    DJANGO_SUPERUSER_EMAIL: nomail@caca.net
+    DJANGO_SUPERUSER_USERNAME: admin
+
+
+db:
+  replicaCount: 1
+  image:
+    repository: postgres
+    tag: latest
+  service:
+    type: ClusterIP
+    port: 5432
+    targetPort: 5432
+
+
+ingress:
+  host: django.antivol.csc8567.luxbulb.org

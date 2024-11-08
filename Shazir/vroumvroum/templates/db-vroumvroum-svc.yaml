@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-{{ .Release.Name }}-svc
+  labels:
+    app: db-{{ .Release.Name }}
+spec:
+  clusterIP: None 
+  selector:
+    app: db-{{ .Release.Name }}
+  type: {{ .Values.db.service.type }}
+  ports:
+    - port: {{ .Values.db.service.port }}
+      targetPort: {{ .Values.db.service.targetPort }}
+      protocol: TCP

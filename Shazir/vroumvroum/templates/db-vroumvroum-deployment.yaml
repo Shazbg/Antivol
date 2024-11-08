@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-{{.Release.Name}}-deployment
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: db-{{.Release.Name}}
+  template:
+    metadata:
+      labels:
+        app: db-{{.Release.Name}}
+    spec:
+      containers:
+      - name: db-{{.Release.Name}}-container
+        image: "{{ .Values.db.image.repository }}:{{ .Values.db.image.tag }}"
+        ports:
+        - containerPort: 5432
+        resources:
+          requests:
+            memory: "{{ .Values.web.resources.requests.memory }}"
+            cpu: "{{ .Values.web.resources.requests.cpu }}"
+          limits:
+            memory: "{{ .Values.web.resources.limits.memory }}"
+            cpu: "{{ .Values.web.resources.limits.cpu }}"
+        envFrom:
+        - configMapRef:
+            name: web-{{.Release.Name}}-configmap
