@@ -50,3 +50,9 @@ On rajoute un ingress pour pointer vers le service web directement depuis intern
 Séparation des images Docker (public, api), création de nouveaux déploiements avec leur service + modification de l'ingress pour taper les différents services
 
 ajouter schéma
+
+# Défi 6 
+
+helm install vroumvroum ./vroumvroum --namespace u-mssxs
+
+Charte OK mais site KO car BDD se lance trop vite (fixé plus tard avec une Readiness Probe)

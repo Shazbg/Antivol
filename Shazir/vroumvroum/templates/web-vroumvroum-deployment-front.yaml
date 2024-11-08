@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web-{{ .Release.Name }}-front-container
-        image: "{{ .Values.front.image.repository }}:{{ .Values.front.image.tag }}"
+        image: {{ .Values.front.image.repository }}:{{ .Values.front.image.tag }}
         ports:
         - containerPort: {{ .Values.front.containerPort }}
         resources:
