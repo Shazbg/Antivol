@@ -21,6 +21,13 @@ spec:
             name: web-{{ .Release.Name }}-svc-api
             port:
               number: {{ .Values.api.service.port }}
+      - path: /media
+        pathType: Prefix
+        backend:
+          service:
+            name: web-{{ .Release.Name }}-svc-front
+            port:
+              number: {{ .Values.api.service.port }}
       - path: /
         pathType: Prefix
         backend:

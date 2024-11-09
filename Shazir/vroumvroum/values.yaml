@@ -1,7 +1,7 @@
 api:
   image:
     repository: "shazbg/vroumvroum"
-    tag: "api_v2"
+    tag: "api_v10"
   containerName: "web-vroumvroum-api-container"
   containerPort: 8001
   service:
@@ -13,7 +13,7 @@ api:
 front:
   image:
     repository: "shazbg/vroumvroum"
-    tag: "front_v2"
+    tag: "front_v10"
   containerName: "web-vroumvroum-front-container"
   containerPort: 8000
   service:
