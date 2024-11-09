@@ -15,7 +15,7 @@ spec:
         app: web-{{ .Release.Name }}-front
     spec:
       containers:
-      - name: web-{{ .Release.Name }}-front-container
+      - name: {{ .Values.front.containerName }}
         image: {{ .Values.front.image.repository }}:{{ .Values.front.image.tag }}
         ports:
         - containerPort: {{ .Values.front.containerPort }}

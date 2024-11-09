@@ -15,7 +15,7 @@ spec:
         app: web-{{ .Release.Name }}-api
     spec:
       containers:
-      - name: web-{{ .Release.Name }}-api-container
+      - name: {{ .Values.api.containerName }}
         image: "{{ .Values.api.image.repository }}:{{ .Values.api.image.tag }}"
         ports:
         - containerPort: {{ .Values.api.containerPort }}
