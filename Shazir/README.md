@@ -56,3 +56,7 @@ ajouter schéma
 helm install vroumvroum ./vroumvroum --namespace u-mssxs
 
 Charte OK mais site KO car BDD se lance trop vite (fixé plus tard avec une Readiness Probe)
+
+# Défi 7 
+
+répondre aux questions + update schéma

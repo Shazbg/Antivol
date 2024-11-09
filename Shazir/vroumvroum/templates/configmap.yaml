@@ -7,6 +7,7 @@ data:
   POSTGRES_DB: {{ .Values.web.env.POSTGRES_DB }}
   POSTGRES_USER: {{ .Values.web.env.POSTGRES_USER }}
   POSTGRES_PASSWORD: {{ .Values.web.env.POSTGRES_PASSWORD }}
+  POSTGRES_HOST: {{ .Values.web.env.POSTGRES_HOST }}
 
   DJANGO_SUPERUSER_PASSWORD: {{ .Values.web.env.DJANGO_SUPERUSER_PASSWORD }}
   DJANGO_SUPERUSER_EMAIL: {{ .Values.web.env.DJANGO_SUPERUSER_EMAIL }}

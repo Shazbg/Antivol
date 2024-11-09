@@ -2,8 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web-{{ .Release.Name }}-ingress
-  labels:
-    app: web-{{ .Release.Name }}-ingress
 spec:
   rules:
   - host: {{ .Values.ingress.host }}
@@ -13,20 +11,20 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: web-{{ .Release.Name }}-api-svc
+            name: web-{{ .Release.Name }}-svc-api
             port:
               number: {{ .Values.api.service.port }}
       - path: /api
         pathType: Prefix
         backend:
           service:
-            name: web-{{ .Release.Name }}-api-svc
+            name: web-{{ .Release.Name }}-svc-api
             port:
               number: {{ .Values.api.service.port }}
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: web-{{ .Release.Name }}-front-svc
+            name: web-{{ .Release.Name }}-svc-front
             port:
               number: {{ .Values.front.service.port }}
