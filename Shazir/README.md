@@ -53,9 +53,8 @@ Séparation des images Docker (public, api), création de nouveaux déploiements
 
 # Défi 6 
 
-helm install vroumvroum ./vroumvroum --namespace u-mssxs
+helm install vroumvroum ./vroumvroum
 
-Charte OK mais site KO car BDD se lance trop vite (fixé plus tard avec une Readiness Probe)
 
 # Défi 7 
 
