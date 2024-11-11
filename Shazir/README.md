@@ -59,4 +59,8 @@ Charte OK mais site KO car BDD se lance trop vite (fixé plus tard avec une Read
 
 # Défi 7 
 
-répondre aux questions + update schéma
+Un statefulset apporte une persistance des données dans les pods, ce qui est fort utile dans le cas d'une base de données, lié à un PVC, il permet de conserver les données de la base de données même lorsque le pod de la BDD crash. 
+
+Un service Headless est un service ClusterIP auquel on force la non-attribution d'une IP au cluster. Le routage vers ce type de service repose uniquement sur le service DNS. Il permet d'accéder individuellement à chaque pod, utile dans le cas où chaque instance doit pouvoir communiquer à chaque noeud d'un cluster.
+
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi7.drawio.png?raw=true">
