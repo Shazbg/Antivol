@@ -5,10 +5,10 @@ api:
   containerName: "web-vroumvroum-api-container"
   containerPort: 8001
   service:
-    type: NodePort
+    type: ClusterIP
     port: 80
     targetPort: 8001
-    nodePort: 30009
+    # nodePort: 30009
 
 front:
   image:
@@ -17,10 +17,10 @@ front:
   containerName: "web-vroumvroum-front-container"
   containerPort: 8000
   service:
-    type: NodePort
+    type: ClusterIP
     port: 80
     targetPort: 8000
-    nodePort: 30007
+    # nodePort: 30007
 
 
 web:
