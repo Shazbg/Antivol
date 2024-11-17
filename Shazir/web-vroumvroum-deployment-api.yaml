@@ -1,23 +1,22 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db-vroumvroum-deployment
+  name: web-vroumvroum-deployment-api
 spec:
-  replicas: 1 
+  replicas: 3
   selector:
     matchLabels:
-      app: db-vroumvroum
+      app: web-vroumvroum-api
   template:
     metadata:
       labels:
-        app: db-vroumvroum
+        app: web-vroumvroum-api
     spec:
       containers:
-      - name: db-vroumvroum-container
-        image: postgres:latest
+      - name: web-vroumvroum-container-api
+        image: shazbg/vroumvroum:api
         ports:
-        - containerPort: 5432
+        - containerPort: 8001
         resources:
           requests:
             memory: "100M"
@@ -32,6 +31,9 @@ spec:
           value: myuser
         - name: POSTGRES_PASSWORD
           value: mypassword
-
-
-
+        - name: DJANGO_SUPERUSER_PASSWORD
+          value: adminadmin
+        - name: DJANGO_SUPERUSER_EMAIL
+          value: nomail@caca.net
+        - name: DJANGO_SUPERUSER_USERNAME
+          value: admin

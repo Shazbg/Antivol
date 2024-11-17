@@ -7,10 +7,24 @@ spec:
   - host: django.antivol.csc8567.luxbulb.org
     http:
       paths:
+      - path: /admin
+        pathType: Prefix
+        backend:
+          service:
+            name: web-vroumvroum-svc-api
+            port:
+              number: 80
+      - path: /api
+        pathType: Prefix
+        backend:
+          service:
+            name: web-vroumvroum-svc-api
+            port:
+              number: 80
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: web-vroumvroum-svc
+            name: web-vroumvroum-svc-front
             port:
               number: 80
