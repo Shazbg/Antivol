@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-{{.Release.Name}}-configmap
+data:
+  myvalue: "Hello World"
+  POSTGRES_DB: {{ .Values.web.env.POSTGRES_DB }}
+  POSTGRES_USER: {{ .Values.web.env.POSTGRES_USER }}
+  POSTGRES_PASSWORD: {{ .Values.web.env.POSTGRES_PASSWORD }}
+  POSTGRES_HOST: {{ .Values.web.env.POSTGRES_HOST }}
+
+  DJANGO_SUPERUSER_PASSWORD: {{ .Values.web.env.DJANGO_SUPERUSER_PASSWORD }}
+  DJANGO_SUPERUSER_EMAIL: {{ .Values.web.env.DJANGO_SUPERUSER_EMAIL }}
+  DJANGO_SUPERUSER_USERNAME: {{ .Values.web.env.DJANGO_SUPERUSER_USERNAME }}
+  
+  
