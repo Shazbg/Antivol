@@ -6,7 +6,7 @@ kubectl create deployment defi1 --image=xhelozs/csc8567:v1
 kubectl get pods  
 kubectl port-forward pods/defi1-bc65795db-sb9qk 8002:5000  
 
-<img src="https://github.com/Shazbg/Antivol/blob/main/defi1/Schema_defi_1.png?raw=true" alt="Défi 1">
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi-1/Schema_defi_1.png" alt="Défi 1">
 
 # Défi 2
 
@@ -18,7 +18,7 @@ Un service sert à exposer une application réseau qui est exécutée sur un ou 
 
 Un ClusterIP expose le service de manière interne au cluster avec des adresses IP internes. C'est utile pour la communication interne entre différents composants d'une application déployée dans le cluster. Par exemple, un service back-end accessible uniquement par un front-end qui est dans le même cluster. Là où un NodePort expose l'applications de manière extene en ouvrant un port spécifique sur chaque noeud du cluster. Ce port redirige le trafic vers le service Kubernetes, qui à son tour redirige le trafic vers les Pods.
 
-<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi2.drawio.png?raw=true">
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi-2/defi2.drawio.png?raw=true">
 
 # Défi 3
 
@@ -35,19 +35,19 @@ Différence avec un Deployment :
 Deployment : Utilisé pour des applications stateless où l'identité des pods et la persistance des données ne sont pas importantes. Les pods sont répliqués de manière interchangeable.
 StatefulSet : Conçu pour des applications stateful où l'identité et l'état des pods sont essentiels. Les pods sont créés dans un ordre spécifique, avec des volumes persistants individuels, et leur identité est conservée à travers les redémarrages.
 
-<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi3.png?raw=true">
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi-3/defi3.png?raw=true">
 
 # Défi 4 
 
 Rajout de l'ingress pour rendre le site accessible depuis internet sans proxy Kube.
 
-<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi4.png?raw=true">
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi-4/defi4.png?raw=true">
 
 # Défi 5
 
 Séparation des images Docker (public, api), création de nouveaux déploiements avec leur service + modification de l'ingress vers les services respectifs.
 
-<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi5.drawio.png?raw=true">
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi-5/defi5.drawio.png?raw=true">
 
 # Défi 6 
 
@@ -60,4 +60,4 @@ Un statefulset apporte une persistance des données dans les pods, ce qui est fo
 
 Un service Headless est un service ClusterIP auquel on force la non-attribution d'une IP au cluster. Le routage vers ce type de service repose uniquement sur le service DNS. Il permet d'accéder individuellement à chaque pod, utile dans le cas où chaque instance doit pouvoir communiquer à chaque noeud d'un cluster.
 
-<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi7.drawio.png?raw=true">
+<img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi-7/defi7.drawio.png?raw=true">
