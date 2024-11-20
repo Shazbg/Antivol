@@ -22,8 +22,6 @@ Un ClusterIP expose le service de manière interne au cluster avec des adresses 
 
 # Défi 3
 
-./kubefdp.sh pour lancer un script qui supprime tous les deployments/statefulset, services et pvc. il les réapply ensuite pour partir sur une base clean  
-
 
 Quelle critique pouvez-vous donner vis-à-vis de l'utilisation d'un Pod pour la base de données ?  
 
@@ -41,13 +39,13 @@ StatefulSet : Conçu pour des applications stateful où l'identité et l'état d
 
 # Défi 4 
 
-On rajoute un ingress pour pointer vers le service web directement depuis internet sans kubectl proxy. Il y a aussi un ingress controller au milieu 
+Rajout de l'ingress pour rendre le site accessible depuis internet sans proxy Kube.
 
 <img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi4.png?raw=true">
 
 # Défi 5
 
-Séparation des images Docker (public, api), création de nouveaux déploiements avec leur service + modification de l'ingress pour taper les différents services
+Séparation des images Docker (public, api), création de nouveaux déploiements avec leur service + modification de l'ingress vers les services respectifs.
 
 <img src="https://github.com/Shazbg/Antivol/blob/main/Shazir/defi5.drawio.png?raw=true">
 
