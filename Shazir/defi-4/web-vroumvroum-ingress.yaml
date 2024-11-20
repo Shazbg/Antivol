@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-vroumvroum-ingress
+spec:
+  rules:
+  - host: django.antivol.csc8567.luxbulb.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web-vroumvroum-svc
+            port:
+              number: 80

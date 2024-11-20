@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-vroumvroum-deployment-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-vroumvroum-api
+  template:
+    metadata:
+      labels:
+        app: web-vroumvroum-api
+    spec:
+      containers:
+      - name: web-vroumvroum-container-api
+        image: shazbg/vroumvroum:api_v1
+        ports:
+        - containerPort: 8001
+        resources:
+          requests:
+            memory: "100M"
+            cpu: "0.1"
+          limits:
+            memory: "200M"
+            cpu: "0.2"
+        env:
+        - name: POSTGRES_DB
+          value: django6
+        - name: POSTGRES_USER
+          value: myuser
+        - name: POSTGRES_PASSWORD
+          value: mypassword
+        - name: DJANGO_SUPERUSER_PASSWORD
+          value: adminadmin
+        - name: DJANGO_SUPERUSER_EMAIL
+          value: nomail@caca.net
+        - name: DJANGO_SUPERUSER_USERNAME
+          value: admin

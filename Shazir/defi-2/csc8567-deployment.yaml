@@ -1,0 +1,28 @@
+apiVersion: apps/v1        # Version de l'API Kubernetes utilisée pour la ressource
+kind: Deployment           # Type de ressource à créer (ici, un Deployment)
+metadata:                  # Informations sur l'objet (nom, labels, annotations, etc.)
+  name: csc8567-deploymentwhip # Nom donné au Deployment
+  labels:                  # Étiquettes associées pour identifier cet objet
+    app: csc8567-app       # Label personnalisé
+spec:                      # Spécifications pour ce Deployment
+  replicas: 3              # Nombre de réplicas (nombre de Pods à exécuter)
+  selector:                # Sélecteur pour identifier les Pods gérés par ce Deployment
+    matchLabels:           # Utilisé pour correspondre aux Pods ayant ces labels
+      app: csc8567-app     # Doit correspondre aux labels définis dans `template`
+  template:                # Définition du modèle des Pods créés par le Deployment
+    metadata:              # Métadonnées pour les Pods
+      labels:              # Labels que les Pods auront
+        app: csc8567-app   # Doit correspondre au sélecteur ci-dessus
+    spec:                  # Spécifications pour les Pods (conteneurs, volumes, etc.)
+      containers:          # Liste des conteneurs à exécuter dans chaque Pod
+      - name: csc8567-container  # Nom donné au conteneur
+        image: xhelozs/csc8567:v1  # Image Docker à utiliser pour ce conteneur
+        ports:                 # Ports que le conteneur expose
+        - containerPort: 80     # Port exposé à l'intérieur du conteneur
+        resources:             # Gestion des ressources CPU et mémoire pour le conteneur
+          requests:            # Ressources demandées, garanties pour ce conteneur
+            memory: "100Mi"    # 100 MiB de mémoire minimum demandée
+            cpu: "100m"        # 100 millicores de CPU demandés
+          limits:              # Limites maximales des ressources
+            memory: "200Mi"    # 200 MiB de mémoire maximale allouée
+            cpu: "200m"        # 200 millicores de CPU maximum utilisables

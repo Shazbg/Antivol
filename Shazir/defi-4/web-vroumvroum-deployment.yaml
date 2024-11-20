@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-vroumvroum-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-vroumvroum
+  template:
+    metadata:
+      labels:
+        app: web-vroumvroum
+    spec:
+      containers:
+      - name: web-vroumvroum-container
+        image: shazbg/vroumvroum:v6
+        ports:
+        - containerPort: 8000
+        env:
+        - name: POSTGRES_DB
+          value: django6
+        - name: POSTGRES_USER
+          value: myuser
+        - name: POSTGRES_PASSWORD
+          value: mypassword
+        - name: DJANGO_SUPERUSER_PASSWORD
+          value: adminadmin
+        - name: DJANGO_SUPERUSER_EMAIL
+          value: nomail@caca.net
+        - name: DJANGO_SUPERUSER_USERNAME
+          value: admin

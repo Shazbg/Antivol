@@ -1,0 +1,37 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-vroumvroum-deployment
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: db-vroumvroum
+  template:
+    metadata:
+      labels:
+        app: db-vroumvroum
+    spec:
+      containers:
+      - name: db-vroumvroum-container
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
+        resources:
+          requests:
+            memory: "100M"
+            cpu: "0.1"
+          limits:
+            memory: "200M"
+            cpu: "0.2"
+        env:
+        - name: POSTGRES_DB
+          value: django6
+        - name: POSTGRES_USER
+          value: myuser
+        - name: POSTGRES_PASSWORD
+          value: mypassword
+
+
+

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-{{ .Release.Name }}-deployment-front
+  labels:
+    app: web-{{ .Release.Name }}-front
+spec:
+  replicas: {{ .Values.web.replicaCount }}
+  selector:
+    matchLabels:
+      app: web-{{ .Release.Name }}-front
+  template:
+    metadata:
+      labels:
+        app: web-{{ .Release.Name }}-front
+    spec:
+      containers:
+      - name: web-{{ .Release.Name }}-front-container
+        image: {{ .Values.front.image.repository }}:{{ .Values.front.image.tag }}
+        ports:
+        - containerPort: {{ .Values.front.containerPort }}
+        resources:
+          requests:
+            memory: "{{ .Values.web.resources.requests.memory }}"
+            cpu: "{{ .Values.web.resources.requests.cpu }}"
+          limits:
+            memory: "{{ .Values.web.resources.limits.memory }}"
+            cpu: "{{ .Values.web.resources.limits.cpu }}"
+        envFrom:
+        - configMapRef:
+            name: web-{{.Release.Name}}-configmap
+
